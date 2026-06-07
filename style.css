@@ -1,6 +1,13 @@
+@font-face {
+    font-family: WinXp;
+    src: url(fontes/windows-xp-tahoma.otf);
+}
+
 body {
     margin: 0%;
 }
+
+/* - - - - - - - - - - - - - */
 
 /* papel de parede winXP */
 .capa-xp {
@@ -54,3 +61,63 @@ body {
     font-size: 14px;
 }
 
+/* - - - - - - - - - - - - - */
+
+/* janela - minha foto */
+
+.minha-foto-window {
+    position: absolute;
+    top: 19%;
+    left: 70%;
+    z-index: 5; /* ???? */
+}
+
+.minha-foto-container {
+    margin: 0;
+    position: relative;
+    width: 284px;
+    height: 380px;
+}
+
+.foto-apresentacao {
+    width: 140%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+
+}
+
+.minha-foto-container img{
+    /* filter: drop-shadow(0 0 1rem darkorange); */
+    filter: drop-shadow(-5px 10px 5px #1e1b1684);
+}   
+
+
+/* título: Sofia Carolina */
+
+.meu-nome{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 64%;
+    left: 54%;
+    margin: 0;
+}
+
+.meu-nome h1{
+    /* border: 1px solid red;   */
+    color: #ece9d8;
+    margin: 0;
+    font-family: WinXP;
+    font-size: 110px;
+
+    line-height: 0.7;
+    filter: drop-shadow(-3px -2px 1px #1e1b1684);
+}
+
+
+
+/* - - - - - - - - - - - - - */
