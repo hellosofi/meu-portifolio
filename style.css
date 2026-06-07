@@ -1,0 +1,56 @@
+body {
+    margin: 0%;
+}
+
+/* papel de parede winXP */
+.capa-xp {
+    background-image: url("img/windows_xp_16.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* notepad */
+
+.notepad-window {
+    width: 500px; 
+    max-width: 90vw; 
+    
+    position: absolute;
+    top: 10%;
+    left: 8%;
+}
+
+.notepad-body {
+    margin: 0;
+    padding: 3.6px;
+}
+
+/* consertar o alinhamento */
+.title-bar-text {
+    display: flex;
+    align-items: center;
+}
+
+.title-bar-icon {
+    height: 16px;
+    margin-right: 6px; 
+    image-rendering: pixelated;
+}
+
+.notepad-textarea {
+    background-color: #ffffff;
+    color: #000000; /* tava bugando e ficando branco */
+    
+    width: 100%;
+    height: 300px; 
+    
+    resize: none; /* parar de mudar de tamanho*/
+    box-sizing: border-box; 
+    padding: 10px; 
+    
+    font-family: 'Lucida Console', monospace; 
+    font-size: 14px;
+}
+
