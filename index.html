@@ -11,7 +11,11 @@
 <body>
 
     <header>
-        <!-- header -->
+        <div class="menu">
+            <div>sobre mim</div>
+            <div>hoome</div>
+            <div>meus projetos</div>
+        </div>
     </header>
 
     <main>
@@ -38,32 +42,50 @@
                 </div>
             </div>
             
-            <div class="minha-foto-conteudo">
-                <!-- add a janela aqui -->
-            </div>
+            <div class="conteudo-direita">
 
-            <div class="window minha-foto-window" style="width: 300px">
-                <div class="title-bar">
-                    <div class="title-bar-text">futura dev.png</div>
-                    <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button aria-label="Close"></button>
+                <div class="minha-foto-conteudo">
+                    <!-- add a janela aqui -->
                 </div>
+
+                <div class="window minha-foto-window" style="width: 300px">
+                    <div class="title-bar">
+                        <div class="title-bar-text">futura dev.png</div>
+                        <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                    </div>
+                    <div class="window-body minha-foto-container">
+                        <img class="foto-apresentacao" src="img/minha-foto-transparente.png" alt="foto minha!">
+                    </div>
                 </div>
-                <div class="window-body minha-foto-container">
-                    <img class="foto-apresentacao" src="img/minha-foto-transparente.png" alt="foto minha!">
+
+                <div class="meu-nome">
+                    <h1>SOFIA</h1>
+                    <h1>.CAROLINA</h1>
                 </div>
+
+                <div class="texto-minha-foto">
+                    <p>&lt;dev em formação&gt;</p>
+                </div>
+                
             </div>
-            <div class="meu-nome">
-                <h1>SOFIA</h1>
-                <h1>    .CAROLINA</h1>
-            </div>
+            <!-- <div class="degrade-scroll" id="efeito-degrade"></div> -->
         </section>
         
         <!-- informações sobre mim -->
         <section class="primeira-parte"> 
+            
+            <div></div>
+            <div></div>
+            <div></div>
+            
             <!-- vazia -->
+             <!-- <div>
+                <h1>oi</h1>
+             </div> -->
         </section>
 
         
@@ -73,6 +95,30 @@
     <footer>
         
     </footer>
-
+    <script src="">
+        // adicionar tela de carregamento
+    </script>
+    <script>
+        // Fica observando o movimento de scroll na tela
+        window.addEventListener('scroll', function() {
+            
+            // Pega a nossa div do degradê
+            const degrade = document.getElementById('efeito-degrade');
+            
+            // Pega a quantidade de pixels que rolamos para baixo
+            const rolagem = window.scrollY;
+            
+            // Calcula a opacidade (0 até 300px de descida)
+            let novaOpacidade = rolagem / 300;
+            
+            // Trava o limite em 1 (totalmente visível) para não passar do ponto
+            if (novaOpacidade > 1) {
+                novaOpacidade = 1;
+            }
+            
+            // Aplica a opacidade na tela
+            degrade.style.opacity = novaOpacidade;
+        });
+    </script>
 </body>
 </html>
