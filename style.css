@@ -382,19 +382,23 @@ header .menu a:hover {
 
 
 /* AS IMAGENS SOLTAS (ABSOLUTAS) */
-.sobre-mim .laptop-xuxa {
+
+/* .sobre-mim .laptop-xuxa {
     position: absolute;
     bottom: -20px; 
     left: 210px;
     width: 400px;
     rotate: 7deg;
-    z-index: 3;   
+    z-index: 3;
+    transform: scale(0.3) rotate(-40deg) translate(-800px, -300px);
+    opacity: 0; 
+    transition: ease-in 240ms;  
 }
 
 .sobre-mim .laptop-xuxa img {
     width: 100%; 
     filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); 
-}
+} */
 
 /* container do chat */
 .chat-msn {
@@ -432,7 +436,19 @@ header .menu a:hover {
 
     /* formato msg */
     border-radius: 0px 20px 20px 20px; 
+
+    transition: ease 100ms;
     
+}
+
+.chat-msn .balao strong {
+    font-weight: lighter;
+}
+
+
+.chat-msn .balao:hover {
+    opacity: 0.9;
+    transform: translateY(-4px) rotate(-0.5deg);
 }
 
 /* balão sem ponta */
@@ -450,17 +466,18 @@ header .menu a:hover {
 
 /* ANCHOR câmera */
 .camera-frame {
+    outline: 1px solid red;
     position: absolute;
     width: 180px; 
-    height: 250px; 
-    bottom: -30px; 
-    left: -40px;
+    height: 100px; 
+    bottom: 20px; 
+    left: 100px;
     rotate: 2deg; 
     z-index: 4; 
     
     filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
     
-    transform: scale(2.4);
+    transform: scale(2);
     transform-origin: center;
 
     transition: transform 0.3s ease;
@@ -477,8 +494,7 @@ header .menu a:hover {
     transform: rotate(-5deg) scale(2.6);
 }
 
-.camera-frame:hover .img-depois {
-
+.camera-frame:hover .img-depois, .laptop-xuxa {
     opacity: 1;
 }
 
@@ -506,10 +522,11 @@ header .menu a:hover {
     position: absolute;
     
     /* ajuste da foto */
-    width: 100px;   
+    width: 110px;   
     height: 80px;  
-    top: 80px;      
-    left: 20px;     
+    top: 10px;      
+    left: 30px;     
+    border-radius: 10px;
     
     object-fit: cover; 
     z-index: 1; 
