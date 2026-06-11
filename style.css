@@ -16,14 +16,47 @@
             rgba(27, 94, 12, 0.9) 100%
             /* Base: Verde floresta denso */
         );
-    --bolha-cor: linear-gradient(-180deg, hsla(181, 79%, 39%, 0.502) 0%, hsla(138, 100%, 73%, 0.54) 100%);
 
+    --degrade-amarelo-xp: linear-gradient(to bottom right,
+            rgba(193, 190, 25, 0.95) 0%,
+            /* Topo: Verde limão clarinho, quase opaco (densidade da borda) */
+            rgba(174, 148, 0, 0.75) 25%,
+            /* Centro: Verde vibrante, bem translúcido (o "corpo" do gel) */
+            rgba(213, 174, 19, 0.8) 75%,
+            /* Baixo: Verde escurecendo, mais denso */
+            rgba(83, 86, 17, 0.9) 100%
+            /* Base: Verde floresta denso */
+        );
+
+    --degrade-azul-xp: linear-gradient(to bottom right,
+            rgba(97, 180, 255, 0.95) 0%,
+            /* Topo: Azul celeste clarinho, quase opaco (densidade da borda) */
+            rgba(41, 130, 255, 0.75) 25%,
+            /* Centro: Azul vibrante, bem translúcido (o "corpo" do gel) */
+            rgba(8, 80, 200, 0.8) 75%,
+            /* Baixo: Azul escurecendo, mais denso */
+            rgba(10, 45, 140, 0.9) 100%
+            /* Base: Azul marinho denso */
+        );
+
+    --bolha-cor: linear-gradient(-180deg, hsla(181, 79%, 39%, 0.502) 0%, hsla(138, 100%, 73%, 0.54) 100%);
+    
+    --bolha-cor-amarelo: linear-gradient(-180deg, hsla(56, 100%, 48%, 0.502) 0%, hsla(61, 100%, 40%, 0.54) 100%);
+    
     --bolha-sombra:
         /* 0 1rem 1.25rem 0 rgba(16, 45, 12, 0.1), */
         0 -0.25rem 1.5rem rgba(241, 255, 255, 0.581) inset,
         0 0.75rem 0.5rem rgba(48, 153, 74, 0.4) inset,
         0 0.25rem 0.5rem 0 rgb(47, 189, 197) inset;
+
+    --bolha-sombra-amarelo:
+     /* 0 1rem 1.25rem 0 rgba(16, 45, 12, 0.1), */
+        0 -0.25rem 1.5rem rgba(241, 255, 255, 0.581) inset,
+        0 0.75rem 0.5rem rgba(137, 121, 21, 0.4) inset,
+        0 0.25rem 0.5rem 0 rgb(219, 243, 113) inset;
 }
+
+    
 
 
 
@@ -33,7 +66,7 @@
     src: url(fontes/windows-xp-tahoma.otf);
 }
 
-body {
+body, p, h1 {
     margin: 0%;
 }
 
@@ -120,13 +153,18 @@ header .menu a:hover {
 /* ANCHOR - capa winxp 
 
 /* papel de parede winXP */
-.capa-xp {
+.capa {
     position: relative;
-    background-image: url("img/windows_xp_16.jpg");
+    /* background-image: url("img/windows_xp_16.jpg"); */
     height: 100vh;
     background-size: cover;
     background-position: center;
     z-index: 1;
+}
+
+
+.xp {
+    background-image: url("img/windows_xp_16.jpg");
 }
 
 .degrade-scroll {
@@ -276,14 +314,15 @@ header .menu a:hover {
 
 /* - - - - - - - - - - - - - */
 
-/* ANCHOR conteúdo 1 - nuvens */
+/* ANCHOR conteúdo 1 - nuvens sobre mim */
 
 .primeira-parte {
     height: 100vh;
     display: flex;
     gap: 60px;
     justify-content: center;
-    padding-top: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     position: relative;
     overflow: hidden;
@@ -315,30 +354,211 @@ header .menu a:hover {
 }
 
 
-.primeira-parte .conteudo {
+/* A CAIXA PRINCIPAL */
+.primeira-parte .sobre-mim {
+    position: relative; 
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+        
+    /* glassmorphism intacto */
     margin-top: 60px;
     height: 600px;
     width: 1200px;
-    
-    /* From https://css.glass */
     background: rgba(255, 255, 255, 0.37);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(85, 161, 77, 0.3);
+    padding: 40px;
 }
 
-.conteudo div {
+/* O CONTAINER DE TEXTO */
+.textos-sobre {
+    /* outline: 2px solid red; */
+    width: 50%; 
+    z-index: 2; 
+}
+
+
+/* AS IMAGENS SOLTAS (ABSOLUTAS) */
+.sobre-mim .laptop-xuxa {
+    position: absolute;
+    bottom: -20px; 
+    left: 210px;
+    width: 400px;
+    rotate: 7deg;
+    z-index: 3;   
+}
+
+.sobre-mim .laptop-xuxa img {
+    width: 100%; 
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); 
+}
+
+/* container do chat */
+.chat-msn {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    width: 55%; 
+    z-index: 2;
+
+}
+
+/* nick */
+.chat-msn .nick {
+    font-family: 'Tahoma', sans-serif;
+    font-weight: bold;
+    color: var(--azul-escuro-borda);
+    font-size: 0.9rem;
+    margin-bottom: -2px;
+}
+
+/* balões */
+.chat-msn .balao {
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 12px 18px;
+    color: #222;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    width: fit-content; 
+    
+    /* glass alguma coisa */
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+
+    /* formato msg */
+    border-radius: 0px 20px 20px 20px; 
+    
+}
+
+/* balão sem ponta */
+.chat-msn .continuo {
+    border-radius: 8px 20px 20px 8px; 
+}
+
+.chat-msn .destaque {
+    border-radius: 8px 20px 20px 20px; 
+    background: var(--degrade-azul-xp); /* degradê novo */
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border: none;
+}
+
+/* ANCHOR câmera */
+.camera-frame {
+    position: absolute;
+    width: 180px; 
+    height: 250px; 
+    bottom: -30px; 
+    left: -40px;
+    rotate: 2deg; 
+    z-index: 4; 
+    
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+    
+    transform: scale(2.4);
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+
+
+}
+
+.camera-frame .img-depois {
+    opacity: 0;
+    transition: ease-in 100ms;
+}
+
+.camera-frame:hover {
+    transform: rotate(-5deg) scale(2.6);
+}
+
+.camera-frame:hover .img-depois {
+
+    opacity: 1;
+}
+
+
+
+.camera-frame::after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(img/camera.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    
+    z-index: 2; 
+    pointer-events: none;
+}
+
+.camera-frame img {
+    display: block; 
+    position: absolute;
+    
+    /* ajuste da foto */
+    width: 100px;   
+    height: 80px;  
+    top: 80px;      
+    left: 20px;     
+    
+    object-fit: cover; 
+    z-index: 1; 
+
+}
+
+
+
+/* .conteudo div {
 
     background-color: whitesmoke;
-    width:350px;
+    width: 350px;
     height: 80%;
     border-radius: 70px 5px;
 
-    box-shadow: 0 4px 38px rgba(7, 15, 48, 0.3);
+    box-shadow: 0 4px 38px rgba(27, 35, 69, 0.3);
+} */
+
+/* ANCHOR conteúdo 2 - fim da página */
+
+
+/* TODO contato */
+
+.peixe {
+    background-image: url(img/water_57.png);
+
+}
+
+/* TODO projeto */
+
+.flor {
+    background-image: url(img/windows_xp_35.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apresentacao-projetos {
+    margin-top: 8vh;
+    height: 600px;
+    width: 1200px;
+    /* background-color: #ffffff51; */
+}
+
+.menu.projeto a {
+    background: var(--bolha-cor-amarelo);
+    box-shadow: var(--bolha-sombra-amarelo);
+}
+
+.menu.projeto {
+    background: var(--degrade-amarelo-xp);
 }
