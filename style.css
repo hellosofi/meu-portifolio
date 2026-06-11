@@ -6,16 +6,27 @@
     --branco-absoluto: #ffffff;
     --cinza-xp-sombra: #aca899;
 
-    --degrade-verde-xp: linear-gradient(
-        to bottom right,
-        rgba(139, 214, 97, 0.95) 0%,   /* Topo: Verde limão clarinho, quase opaco (densidade da borda) */
-        rgba(68, 169, 41, 0.75) 25%,   /* Centro: Verde vibrante, bem translúcido (o "corpo" do gel) */
-        rgba(34, 138, 8, 0.8) 75%,    /* Baixo: Verde escurecendo, mais denso */
-        rgba(27, 94, 12, 0.9) 100%     /* Base: Verde floresta denso */
-    );
+    --degrade-verde-xp: linear-gradient(to bottom right,
+            rgba(139, 214, 97, 0.95) 0%,
+            /* Topo: Verde limão clarinho, quase opaco (densidade da borda) */
+            rgba(68, 169, 41, 0.75) 25%,
+            /* Centro: Verde vibrante, bem translúcido (o "corpo" do gel) */
+            rgba(34, 138, 8, 0.8) 75%,
+            /* Baixo: Verde escurecendo, mais denso */
+            rgba(27, 94, 12, 0.9) 100%
+            /* Base: Verde floresta denso */
+        );
+    --bolha-cor: linear-gradient(-180deg, hsla(181, 79%, 39%, 0.502) 0%, hsla(138, 100%, 73%, 0.54) 100%);
 
-
+    --bolha-sombra:
+        /* 0 1rem 1.25rem 0 rgba(16, 45, 12, 0.1), */
+        0 -0.25rem 1.5rem rgba(241, 255, 255, 0.581) inset,
+        0 0.75rem 0.5rem rgba(48, 153, 74, 0.4) inset,
+        0 0.25rem 0.5rem 0 rgb(47, 189, 197) inset;
 }
+
+
+
 
 @font-face {
     font-family: WinXp;
@@ -28,16 +39,16 @@ body {
 
 /* - - - - - - - - - - - - - */
 
-/* testes */
+/* ANCHOR menu header*/
 
 header .menu {
     /* border: solid 2px red; */
-    
+
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     /* z-index: ; */
 
     height: 8%;
@@ -52,35 +63,61 @@ header .menu {
     backdrop-filter: blur(6.5px);
     -webkit-backdrop-filter: blur(6.5px);
     border: 1px solid rgba(43, 179, 51, 0.25);
-   
-    box-shadow: 
+
+    box-shadow:
         /* sombra interna */
-        inset 0px 4px 5px rgba(255, 255, 255, 0.1), 
-        inset 0px 0px 20px rgba(203, 255, 187, 0.1), 
-        inset 0px 1px 5px rgba(255, 255, 255, 0.4), 
+        inset 0px 4px 5px rgba(255, 255, 255, 0.1),
+        inset 0px 0px 20px rgba(203, 255, 187, 0.1),
+        inset 0px 1px 5px rgba(255, 255, 255, 0.4),
         inset 0px -4px 9px rgb(5, 35, 0, 0.3),
-        
+
         /* sompra externa */
         0px 1px 30px rgba(2, 7, 54, 0.3),
         0px 0px 6px rgba(2, 7, 54, 0.55);
-        
+
 }
 
-   header .menu div {
+header .menu a {
     display: flex;
-    height: 70%;
-    width: 10%;
+    height: 75%;
+    width: 13%;
 
-    background-color: rgb(255, 255, 255, 0.3);
+    background: var(--bolha-cor);
+    box-shadow: var(--bolha-sombra);
+    opacity: 90%;
+
 
     align-items: center;
     justify-content: center;
 
     border-radius: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    transition: ease-in 100ms;
+}
+
+header .menu a {
+    font-family: 'Lucida Console', monospace;
+    font-size: 10px;
+    text-decoration: none;
+
+    color: #ebffe4ad;
+    /* text-shadow: 0 0 5px #FFF, 0 0 20px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18; */
+
+}
+
+/* 
+header .menu a:hover{
+    color
+} */
+
+header .menu a:hover {
+    transform: translate(0px, 10px) scale(1.1) scaleY(1.05);
+    opacity: 80%;
 }
 
 
+
+/* ANCHOR - capa winxp 
 
 /* papel de parede winXP */
 .capa-xp {
@@ -102,15 +139,15 @@ header .menu {
     z-index: 2;
     pointer-events: none;
 
-    transition: opacity 30ms ease-out;    
+    transition: opacity 30ms ease-out;
 }
 
-/* notepad */
+/* ANCHOR notepad */
 
 .notepad-window {
-    width: 500px; 
-    max-width: 90vw; 
-    
+    width: 500px;
+    max-width: 90vw;
+
     position: absolute;
     top: 12%;
     left: 8%;
@@ -129,22 +166,24 @@ header .menu {
 
 .title-bar-icon {
     height: 16px;
-    margin-right: 6px; 
+    margin-right: 6px;
     image-rendering: pixelated;
 }
 
 .notepad-textarea {
     background-color: #ffffff;
-    color: #000000; /* tava bugando e ficando branco */
-    
+    color: #000000;
+    /* tava bugando e ficando branco */
+
     width: 100%;
-    height: 300px; 
-    
-    resize: none; /* parar de mudar de tamanho*/
-    box-sizing: border-box; 
-    padding: 10px; 
-    
-    font-family: 'Lucida Console', monospace; 
+    height: 300px;
+
+    resize: none;
+    /* parar de mudar de tamanho*/
+    box-sizing: border-box;
+    padding: 10px;
+
+    font-family: 'Lucida Console', monospace;
     font-size: 14px;
 }
 
@@ -159,13 +198,14 @@ header .menu {
     height: 550px;
 }
 
-/* janela - minha foto */
+/* ANCHOR janela - minha foto */
 
 .minha-foto-window {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5; /* ???? */
+    z-index: 5;
+    /* ???? */
 }
 
 .minha-foto-container {
@@ -187,15 +227,15 @@ header .menu {
 
 }
 
-.minha-foto-container img{
+.minha-foto-container img {
     /* filter: drop-shadow(0 0 1rem darkorange); */
     filter: drop-shadow(-5px 10px 5px #1e1b1684);
-}   
+}
 
 
-/* título: Sofia Carolina */
+/* ANCHOR título: Sofia Carolina - minha foto */
 
-.meu-nome{
+.meu-nome {
     /* border: 1px solid red; */
     position: absolute;
     bottom: 65px;
@@ -203,7 +243,7 @@ header .menu {
     margin: 0;
 }
 
-.meu-nome h1{
+.meu-nome h1 {
     /* border: 1px solid red;   */
     color: #ece9d8;
     margin: 0;
@@ -214,10 +254,10 @@ header .menu {
     filter: drop-shadow(-3px -2px 1px #1e1b1684);
 }
 
-/* textinho */
+/* ANCHOR legenda - minha foto */
 
 .texto-minha-foto p {
-    font-family: 'Lucida Console', monospace; 
+    font-family: 'Lucida Console', monospace;
     position: absolute;
     bottom: 100px;
     right: 155px;
@@ -236,30 +276,25 @@ header .menu {
 
 /* - - - - - - - - - - - - - */
 
+/* ANCHOR conteúdo 1 - nuvens */
+
 .primeira-parte {
-    /* background-color: #aca899; */
     height: 100vh;
     display: flex;
     gap: 60px;
     justify-content: center;
     padding-top: 200px;
-    
+
     position: relative;
     overflow: hidden;
-    
+
     background-color: #ffffff4b;
-
-    /* background-image: url(img/cloud.jpg); */
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(8px); */
-
     flex-wrap: wrap;
 
 }
 
 /* background blur */
-.primeira-parte::before{
+.primeira-parte::before {
     content: "";
     position: absolute;
     top: 0;
@@ -267,36 +302,43 @@ header .menu {
     width: 100%;
     height: 100%;
 
-    background-image: url(img/cloud.jpg);
+    background-image: url(img/ceu.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     filter: blur(8px);
 
-    z-index: -1; 
-    
-    /* MACETE DE OURO: Como o blur "puxa" as bordas para dentro e pode deixar as beiradas da tela esbranquiçadas, a gente dá um zoom de 5% na imagem para esconder a borda borrada */
+    z-index: -1;
+
+    /* macete: */
     transform: scale(1.05);
 }
 
-.primeira-parte div {
-    /* border: 1px solid red; */
-    background-color: whitesmoke;
-    box-shadow: #4b49635c 0 0 40px;
-    width: 430px; 
+
+.primeira-parte .conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
     height: 600px;
-    border-radius: 20px;
-
-    position: relative;
-    z-index: 1;
-
-    transition: ease-in 180ms;
-
+    width: 1200px;
+    
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.37);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(85, 161, 77, 0.3);
 }
 
-.primeira-parte div:hover {
-    transform: scale(102%);
+.conteudo div {
+
+    background-color: whitesmoke;
+    width:350px;
+    height: 80%;
+    border-radius: 70px 5px;
+
+    box-shadow: 0 4px 38px rgba(7, 15, 48, 0.3);
 }
-
-
-
