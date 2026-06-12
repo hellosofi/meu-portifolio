@@ -8,45 +8,43 @@
     <link rel="stylesheet" href="https://unpkg.com/xp.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-test.css">
-
+    <!-- add ícone -->
+    <!-- <link rel="shortcut icon" href="barbeariaAlura.png" type="image/x-icon"> -->
 </head>
 
-<body>
+<body class="carregando">
 
     <!-- ANCHOR menu -->
     <header>
         <div class="menu">
-            <a href="">meus projetos</a>
-
-            <!-- <h1 class="nome-menu">SOFIA CAROLINA</h1> -->
-
-            <a href="">hoome</a>
-            <a href="">contate-me</a>
+            <a href="projetos.html">meus projetos</a>
+            <a href="index.html">hoome</a>
+            <a href="contato.html">contate-me</a>
         </div>
     </header>
 
     <main>
         <!-- ANCHOR CAPA AQUI: -->
-        <section class="capa xp">
+        <section>
 
-            <!-- bloco de notas -->
-            <div class="window notepad-window">
-
-                <div class="title-bar">
-                    <div class="title-bar-text">
-                        <!-- que resenha pra adicionar esse ícone -->
-                        <img src="img/Notepad_WinXP.webp" alt="papel de parede clássico do Windows XP"
-                            class="title-bar-icon">
-                        bem-vindo.txt
+            <div class="capa xp">
+                <!-- bloco de notas -->
+                <div class="window notepad-window">
+                    <div class="title-bar">
+                        <div class="title-bar-text">
+                            <!-- que resenha pra adicionar esse ícone -->
+                            <img src="img/Notepad_WinXP.webp" alt="papel de parede clássico do Windows XP"
+                                class="title-bar-icon">
+                            bem-vindo.txt
+                        </div>
+                        <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                        </div>
                     </div>
-                    <div class="title-bar-controls">
-                        <button aria-label="Minimize"></button>
-                        <button aria-label="Maximize"></button>
-                        <button aria-label="Close"></button>
-                    </div>
-                </div>
-                <div class="window-body notepad-body">
-                    <textarea readonly class="notepad-textarea">
+                    <div class="window-body notepad-body">
+                        <textarea readonly class="notepad-textarea">
                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⠋⠀⠀⠙⢿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⠀⠀⠀⠀⣸⡇⠀⠀⠀⠀⠀⠙⢿⣦⡀⠀⠀⢀⣀⣀⣠⣤⣀⠀⠀
@@ -65,77 +63,68 @@
                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠛⠛⠁
 oii!
 vem conhecer um pouco sobre mim :)</textarea>
+                    </div>
                 </div>
-            </div>
-
-            <div class="conteudo-direita">
-
-                <div class="minha-foto-conteudo">
-                    <!-- add a janela aqui -->
-                </div>
-
-                <div class="window minha-foto-window" style="width: 300px">
-                    <div class="title-bar">
-                        <div class="title-bar-text">futura-dev.png</div>
-                        <div class="title-bar-controls">
-                            <button aria-label="Minimize"></button>
-                            <button aria-label="Maximize"></button>
-                            <button aria-label="Close"></button>
+                <div class="conteudo-direita">
+                    <div class="minha-foto-conteudo">
+                        <!-- add a janela aqui -->
+                    </div>
+                    <div class="window minha-foto-window" style="width: 300px">
+                        <div class="title-bar">
+                            <div class="title-bar-text">futura-dev.png</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body minha-foto-container">
+                            <img class="foto-apresentacao" src="img/minha-foto-transparente.png" alt="foto minha!">
                         </div>
                     </div>
-                    <div class="window-body minha-foto-container">
-                        <img class="foto-apresentacao" src="img/minha-foto-transparente.png" alt="foto minha!">
+                    <div class="meu-nome">
+                        <h1>SOFIA</h1>
+                        <h1>.CAROLINA</h1>
+                    </div>
+                    <div class="texto-minha-foto">
+                        <p>&lt;dev em formação&gt;</p>
                     </div>
                 </div>
-
-                <div class="meu-nome">
-                    <h1>SOFIA</h1>
-                    <h1>.CAROLINA</h1>
-                </div>
-
-                <div class="texto-minha-foto">
-                    <p>&lt;dev em formação&gt;</p>
-                </div>
-
             </div>
-            <!-- <div class="degrade-scroll" id="efeito-degrade"></div> -->
         </section>
 
         <!-- informações sobre mim -->
-        <section class="primeira-parte">
+        <section>
 
-            <div class="sobre-mim">
-
-                <div class="textos-sobre chat-msn">
-                    <span class="nick">sofia_carolina diz:</span>
-
-                    <div class="balao">
-                        oi! prazer, <strong>sofia</strong> :)
+            <div class="primeira-parte">
+                <div class="sobre-mim">
+                    <div class="textos-sobre chat-msn">
+                        <span class="nick">sofia_carolina diz:</span>
+                        <div class="balao">
+                            oi! prazer, <strong>sofia</strong> :)
+                        </div>
+                        <div class="balao continuo">
+                            desde muito nova eu já era grudada no computador. passava horas fuçando nos programas, tentando
+                            zerar joguinhos em flash e super curiosa pra entender como as coisas funcionavam por trás da
+                            tela brilhante.
+                        </div>
+                        <div class="balao continuo">
+                            o tempo passou e o que era só curiosidade virou a minha escolha de vida: fui estudar Ciência da
+                            Computação!
+                        </div>
+                        <div class="balao destaque">
+                            hoje eu tô aqui, construindo meu caminho como dev. adoro aprender coisas novas, testar visuais
+                            (como esse site!) e transformar minhas ideias malucas em linhas de código que
+                            funcionam de verdade.
+                        </div>
                     </div>
-
-                    <div class="balao continuo">
-                        desde muito nova eu já era grudada no computador. passava horas fuçando nos programas, tentando zerar joguinhos em flash e super curiosa pra entender como as coisas funcionavam por trás da tela brilhante.
-                    </div>
-
-                    <div class="balao continuo">
-                        o tempo passou e o que era só curiosidade virou a minha escolha de vida: fui estudar Ciência da
-                        Computação!
-                    </div>
-
-                    <div class="balao destaque">
-                        hoje eu tô aqui, construindo meu caminho como dev. adoro aprender coisas novas, testar visuais
-                        nostálgicos (como esse site!) e transformar minhas ideias malucas em linhas de código que
-                        funcionam de verdade.
+                    
+                    <!-- <div class="laptop-xuxa"><img src="img/laptop-xuxa-removebg-preview.png" alt=""></div> -->
+                    <div class="camera-frame">
+                        <img class="img-antes" src="img/eu-today.jpeg" alt="">
+                        <img class="img-depois" src="img/wmremove-transformed.jpeg" alt="">
                     </div>
                 </div>
-
-                <!-- <div class="laptop-xuxa"><img src="img/laptop-xuxa-removebg-preview.png" alt=""></div> -->
-                
-                <div class="camera-frame">
-                    <img class="img-antes" src="img/eu-today.jpeg" alt="">
-                    <img class="img-depois" src="img/wmremove-transformed.jpeg" alt="">
-                </div>
-
             </div>
 
         </section>
@@ -144,11 +133,11 @@ vem conhecer um pouco sobre mim :)</textarea>
     </main>
 
     <footer>
-        <p>aqui está o rodapé</p>
+        <div class="texto-rodape">
+            <p>@hellosofi on github</p>
+        </div>
     </footer>
-    <script src="">
-        // adicionar tela de carregamento
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
